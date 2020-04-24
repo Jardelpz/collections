@@ -1,0 +1,7 @@
+<label> Name </label>
+
+<% if (locals.author != null) { %>
+    <input type="text" name="name" value="<%= author.name  %>">
+<% } else { %>
+    <input type="text" name="name">
+<% } %>
