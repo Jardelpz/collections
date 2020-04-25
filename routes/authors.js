@@ -10,12 +10,11 @@ router.get('/', async (req, res)=>{ //==authors/
         searchOptions.name = new RegExp(req.query.name, 'i') //i de case insensitive, responsavel por procurar por palavras parecidas rd de jardel, por exemplo
     }
     try{
-        const authors= await Auhtor.find(searchOptions)
+        const authors= await Auhtor.find(searchOptions) //se searchOptions nao tiver nada, ele vai buscar todos os autores
         res.render('authors/index', { authors: authors, searchOptions : req.query })
     }catch(err){
         res.redirect('/')
     }
-    
 })
 
 // New Auhtor

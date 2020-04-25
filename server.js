@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 
 const authorRouter= require('./routes/authors')
 const indexRouter= require('./routes/index')
+const bookRouter= require('./routes/books')
 
 const app= express()
 
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended : false , limit : '10mb'}))
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true

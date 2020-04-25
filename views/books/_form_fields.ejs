@@ -1,0 +1,20 @@
+<label> Title </label>
+
+<% if (locals.book != null) {%>  
+    <input type="text" name="title" value="<%= book.title  %>">
+ <% }%>
+
+ 
+ <label> Author </label>
+ <select name="author">
+ <% if (locals.authors != null) { %>
+ <% authors.forEach(author => { %>
+     <% if(author.id === book.author) { %>
+         <option selected label="<%= author.name %>" value="<%= author.id %>"></option>
+     <% } else { %>
+         <option label="<%= author.name %>" value="<%= author.id %>"></option>
+     <% }  %> 
+ <% })  %>   
+ </select>
+
+ <% }%>
