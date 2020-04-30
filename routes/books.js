@@ -17,7 +17,16 @@ const upload = multer({ //fileffilter to do
 
 //All books
 router.get('/', async (req, res)=>{
-    res.send('all')
+    try{
+        const books = await Book.find({})
+        res.render('books/index', {
+            books: books,
+            searchOptions: req.query
+        })
+    }catch(err){
+        res.redirect('/')
+    }
+    
 })
 
 // New Book
