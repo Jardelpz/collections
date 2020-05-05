@@ -18,7 +18,7 @@ app.set('layout', 'layouts/layout') //vai ter um layout padrao, cada layout vei 
 
 app.use(expressLayouts)
 app.use(express.static('public')) //css, js e imagens
-app.use(bodyParser.urlencoded({ extended : false , limit : '10mb'}))
+app.use(bodyParser.urlencoded({ extended : false }))
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)

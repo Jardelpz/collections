@@ -8,10 +8,14 @@ const router = express.Router()
 const Book = require('../models/book')
 const Author = require('../models/author')
 const uploadPath = path.join('public', Book.coverImagemBasePath)
-const imageTypes = ['images/jpeg', 'images/png', 'images/jpg', 'images/gif']
+const imageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif']
 
 const upload = multer({ //fileffilter to do
-    dest: uploadPath
+    dest: uploadPath,
+
+    fileFilter: (req, file, callback)=> {
+        callback(null, imageTypes.includes(file.mimetype))
+    },
 })
 
 
@@ -36,7 +40,7 @@ router.get('/new', async (req, res)=>{
 
 // Creating a new book
 router.post('/', upload.single('cover'), async (req,res)=>{
-    const fileName = req.file != null ? req.file.fieldname : null
+    const fileName = req.file != null ? req.file.filename : null
     const book = new Book({
         title: req.body.title,
         author: req.body.author,

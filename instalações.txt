@@ -6,4 +6,4 @@ npm add --save-dev dotenv
 npm add body-parser
 npm addm multer // dar um nome para imagem antes de salvar a string no banco
 
-git push herolu master
+git push heroku master
