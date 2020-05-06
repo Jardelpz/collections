@@ -1,1 +1,8 @@
-Início
+<h2>Books Recently Added</h2>
+<div>
+    <% if (locals.books != null) { %>
+        <% books.forEach(book => { %>
+            <img height="350" width="300" src="<%= book.coverImage %>">
+        <% }) %>
+    <% } %>
+</div>
