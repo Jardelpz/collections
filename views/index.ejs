@@ -1,8 +1,11 @@
 <h2>Books Recently Added</h2>
 <div>
     <% if (locals.books != null) { %>
-        <% books.forEach(book => { %>
-            <img height="350" width="300" src="<%= book.coverImage %>">
-        <% }) %>
+    <% books.forEach(book => { %>
+    <img height="350" width="300" src="<%= book.coverImage %>">
+    <% }) %>
     <% } %>
 </div>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+    src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jpzermiani-20&marketplace=amazon&region=BR&placement=B075JMXJLH&asins=B075JMXJLH&linkId=f5e9887569c773b998dceb1f4726e5bd&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066C0&bg_color=FFFFFF">
+</iframe>
